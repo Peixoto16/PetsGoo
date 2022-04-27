@@ -1,0 +1,37 @@
+<div class="row justify-content-center mt-5 mb-5">
+
+    <div class="col-9">
+  
+  
+      <form>
+  
+        <div class="text-center">
+          <img [src]="pet.foto" width="30%">
+        </div>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" [ngModel]="pet.name" readonly>
+          </div>
+          <div class="form-group">
+            <label for="nome">Peso</label>
+            <input type="text" class="form-control" id="peso" name="peso" [ngModel]="pet.peso" readonly>
+          </div>
+         
+          <div class="form-group">
+            <label for="nome">Genero</label>
+            <input type="text" class="form-control" id="genero" name="genero" [ngModel]="pet.genero" readonly>
+          </div>
+          <br>
+          <a [routerLink]="['/pet-update',pet.id]" routerLinkActive="active" class="btn btn-warning btn-block">
+            Editar
+          </a>
+    
+  
+      </form>
+  
+  
+  
+    </div>
+  
+  </div>
+  

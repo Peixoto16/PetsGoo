@@ -1,0 +1,26 @@
+<section id="veterinarios" class="veterinarios">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+     
+        <p>Veterinarios</p>
+        
+     </div>
+     
+     <div class="row">
+      <div class="col-sm-6" *ngFor = "let obj of vetList">
+        <div class="card" style="width: 18rem;">
+          <img [src]="obj.imagem">
+           <div class="card-body">
+              <h5 class="card-title">{{obj.nome}}</h5>
+              <p class="card-text">{{obj.especialidade}}</p><p>{{obj.local}} </p>
+              <a href="http://api.whatsapp.com/send?phone=5533999845590" target="_blank" class="btn btn-primary">{{obj.telefone}}</a>
+            </div>
+        </div>
+      </div>
+
+  </div>
+    
+    </div>
+    
+  </section>

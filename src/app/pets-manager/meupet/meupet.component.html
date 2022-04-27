@@ -1,0 +1,35 @@
+
+<section id="meupet" class="meupet">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+     <p>Meus Pets</p>
+     </div>
+     <div class="card mb-3"  style="max-width: 540px;">
+        <div class="row g-0" *ngFor = "let obj of petList">
+          <div class="col-md-4" >
+            <img [src]="obj.foto" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body"> 
+              <p class="card-title">Nome: {{obj.name}} </p> 
+              <p class="card-text">Peso: {{obj.peso}}  </p>
+              <p class="card-text">Genero: {{obj.genero}} </p>
+              
+
+              <a [routerLink]="['/pet-detalhes',obj.id]" routerLinkActive="active" class="btn btn-warning btn-block">
+                Detalhes
+              </a>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
+ 
+    </div>
+
+</section>
+
+  
+
+

@@ -1,0 +1,120 @@
+ <div id="logreg-forms">
+        
+     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign Up</h1>
+
+        <form #form ="ngForm" [formGroup]="usuarioForm" (submit)="submit()">
+            <div class="form-group">
+                <input  type="text" 
+                name="name" 
+                id="name"  
+                class="form-control" 
+                placeholder="name" 
+                formControlName="name"
+                required >  
+                <div class = "alert alert-danger" *ngIf="(usuarioForm.get('name')?.errors?.required || 
+                usuarioForm.get('name')?.errors?.minlength ||
+                usuarioForm.get('name')?.errors?.maxlength)
+                && (usuarioForm.get('name')?.touched || form.submitted)">
+                    Informe um nome (4 a 150 caracteres)
+                </div>
+            </div>
+           
+                <br> 
+            <div class="form-group">
+                <input  type="text"  
+                name="login" 
+                id="login"  
+                class="form-control" 
+                placeholder="login"
+                formControlName="login" 
+                required >  
+                <div class = "alert alert-danger" *ngIf="(usuarioForm.get('login')?.errors?.required) && (usuarioForm.get('login')?.touched || form.submitted)">
+                    Login obrigatorio
+                </div>
+            </div>    
+           
+                <br>    
+            <div class="form-group">
+                <input  type="password" 
+                name="password" 
+                id="password" 
+                class="form-control"
+                placeholder="Password"
+                formControlName="password" 
+                required>
+                <div class = "alert alert-danger" *ngIf="(usuarioForm.get('password')?.errors?.required) && (usuarioForm.get('password')?.touched || form.submitted)">
+                    Senha obrigatoria
+                </div>
+
+            </div>      
+           
+                 <br>  
+            <div class="form-group">
+                <input type="email"  
+                    name="email" 
+                    id="email"  
+                    class="form-control" 
+                    placeholder="Email address"
+                    formControlName="email" 
+                    required>
+                    <div class = "alert alert-danger" *ngIf="(usuarioForm.get('email')?.errors?.required || 
+                    usuarioForm.get('email')?.errors?.email) && (usuarioForm.get('email')?.touched || form.submitted)">
+                    Informe um email valido
+                </div>
+            </div>
+             
+            <hr>
+            <button type="submit" class="btn btn-primary btn-block"  id="btn-signup"><i class="fas fa-user-plus"></i> Sign up</button>
+            <button type="submit" [routerLink]="['/login']"  class="btn btn-secondary btn-block">
+                Cancelar
+              </button>
+            </form>
+            <br>
+        
+    </div>
+
+    
+    <p style="text-align:center">
+        <a href=" toggleResetPswd(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle() // display:block or none
+    $('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle(); // display:block or none
+    $('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+    // Login Register Form
+    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+    $('#logreg-forms #btn-signup').click(toggleSignUp);
+    $('#logreg-forms #cancel_signup').click(toggleSignUp);
+})g" target="_blank" style="color:black"></a>
+    </p>
+  
+<script>
+function toggleResetPswd(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle() // display:block or none
+    $('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle(); // display:block or none
+    $('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+    // Login Register Form
+    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+    $('#logreg-forms #btn-signup').click(toggleSignUp);
+    $('#logreg-forms #cancel_signup').click(toggleSignUp);
+})
+
+</script>

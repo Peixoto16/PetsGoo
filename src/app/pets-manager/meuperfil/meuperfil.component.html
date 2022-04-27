@@ -1,0 +1,19 @@
+
+<section id="meuperfil" class="meuperfil">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+     <p>Meu Perfil</p>
+     </div>
+     <div class="card mb-3"  style="max-width: 540px;">
+        <div class="row g-0" *ngFor = "let obj of perfilList">
+          <div class="col-md-4" >
+            <img [src]="obj.foto" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body"> 
+              <p class="card-title">nome: {{obj.name}}</p> 
+              <p class="card-text">login: {{obj.login}}</p>
+              <p class="card-text">email: {{obj.email}}</p>
+            </div>
+          </div>
+        </div>
